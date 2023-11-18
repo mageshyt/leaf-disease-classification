@@ -1,0 +1,49 @@
+<annotation>
+	<folder>my-project-name</folder>
+	<filename>278.JPG</filename>
+	<path>/my-project-name/278.JPG</path>
+	<source>
+		<database>Unspecified</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>Black Rot</name>
+		<pose>Unspecified</pose>
+		<truncated>Unspecified</truncated>
+		<difficult>Unspecified</difficult>
+		<bndbox>
+			<xmin>189</xmin>
+			<ymin>21</ymin>
+			<xmax>201</xmax>
+			<ymax>28</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Black Rot</name>
+		<pose>Unspecified</pose>
+		<truncated>Unspecified</truncated>
+		<difficult>Unspecified</difficult>
+		<bndbox>
+			<xmin>217</xmin>
+			<ymin>66</ymin>
+			<xmax>224</xmax>
+			<ymax>72</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Black Rot</name>
+		<pose>Unspecified</pose>
+		<truncated>Unspecified</truncated>
+		<difficult>Unspecified</difficult>
+		<bndbox>
+			<xmin>195</xmin>
+			<ymin>114</ymin>
+			<xmax>211</xmax>
+			<ymax>125</ymax>
+		</bndbox>
+	</object>
+</annotation>
