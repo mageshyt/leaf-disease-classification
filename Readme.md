@@ -57,7 +57,7 @@ For this project, we intend to utilize the "plantVillage" dataset available on K
 
 [plantVillage](https://www.kaggle.com/datasets/emmarex/plantdisease)
 
-![](./front-end/images/dataset.png)
+![](./front-end/assets/dataset.png)
 
 ### 5.3. Techniques
 
@@ -77,13 +77,11 @@ The web application architecture will consist of the following components:
 - A frontend web application built using Streamlit
 - A machine learning model for leaf disease prediction using MobileNetV2
 
-
 The frontend will interact with the backend server through API calls to request predictions, model training, and data storage. The backend server will manage user authentication, data storage, and model training. The machine learning model will be trained and deployed using Docker containers. The application will be hosted on Digital Ocean droplets. The CI/CD pipeline will be used to automate the deployment process.
 
-## 📌  7. Pipeline
+## 📌 7. Pipeline
 
 ---
-
 
 The pipeline follows the following sequence of steps:
 
@@ -91,16 +89,14 @@ The pipeline follows the following sequence of steps:
 
 `Preprocessing`: The data undergoes preprocessing steps to clean, transform, and prepare it for model training. this stage includes data augmentation, which is used to increase the size of the training dataset.
 
-`Model Training`: The preprocessed data is used to train deep learning models. 
+`Model Training`: The preprocessed data is used to train deep learning models.
 
 `Model Evaluation`: The trained models are evaluated using appropriate evaluation metrics to assess their performance. This stage helps in selecting the best-performing model for deployment.
-
 
 `Web App`: The web application is accessible via a web browser, providing a user-friendly interface for interacting with the prediction functionality. Users can input new data and obtain predictions from the deployed model.
 
 `Prediction`: The deployed model uses the input data from the web application to generate predictions. These predictions are then displayed to the user via the web interface.
 
-
-## 🌐  8. Conclusion
+## 🌐 8. Conclusion
 
 This design document outlines the development of a web application for leaf disease prediction using TensorFlow and MobileNetV2. The application will empower users to quickly identify and categorize leaf diseases, facilitating timely intervention and crop management.

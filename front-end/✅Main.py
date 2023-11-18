@@ -2,6 +2,9 @@ import streamlit as st
 from PIL import Image
 
 st.set_page_config(page_title="Leaf Disease Classification",layout="wide")
+# make static file path
+ROOT_PATH = "/Volumes/Project-2/programming/machine_deep_learning/DL-project/"
+
 
 # create sidebar
 
@@ -70,8 +73,8 @@ For this project, we intend to utilize the "plantVillage" dataset available on K
 [plantVillage](https://www.kaggle.com/datasets/emmarex/plantdisease)
 '''
 )
-image = Image.open('./images/dataset.png')            
-st.image(image, caption='MLOps Pipeline',use_column_width=True)
+image = Image.open('./assets/dataset.png')            
+st.image(image, caption='Dataset Image',use_column_width=True)
 
 st.markdown('''
 ### 5.3. Techniques
