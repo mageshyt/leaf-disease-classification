@@ -1,12 +1,13 @@
+import pandas as pd
 import streamlit as st
 from PIL import Image
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # import pandas_profiling as pp
-from ydata_profiling import ProfileReport
+# from ydata_profiling import ProfileReport
 
-from streamlit_pandas_profiling import st_profile_report
+# from streamlit_pandas_profiling import st_profile_report
 
 
 st.info("This is a demo application written to show how to our deeplearing model can be used to predict the disease of a leaf.")
@@ -15,16 +16,16 @@ st.title("Explore Data Analysis 📊")
 
 st.image("https://pianalytix.com/wp-content/uploads/2020/11/Exploratory-Data-Analysis.jpg")
 
-import pandas as pd
-leaf_disease_df = pd.read_csv("/Volumes/Project-2/programming/machine_deep_learning/DL-project/front-end/assets/csv/LeafDisease-2.csv")
+leaf_disease_df = pd.read_csv("./assets/csv/LeafDisease-2.csv")
 
 # Display the dataframe
 st.data_editor(leaf_disease_df)
 
 # 1.we will show much plant has disease and how much plant is healthy
-st.subheader("1.we will show much plant has disease and how much plant is healthy")
+st.subheader(
+    "1.we will show much plant has disease and how much plant is healthy")
 
-leaf_type=leaf_disease_df['leaf_type'].value_counts()
+leaf_type = leaf_disease_df['leaf_type'].value_counts()
 
 st.write(leaf_type)
 # plot them
@@ -53,17 +54,18 @@ st.divider()
 
 st.subheader("3. Family and Disease Relationship:")
 
-family_disease_df = leaf_disease_df.groupby(['leaf_family','leaf_type']).size().reset_index(name='counts')
+family_disease_df = leaf_disease_df.groupby(
+    ['leaf_family', 'leaf_type']).size().reset_index(name='counts')
 
 st.write(family_disease_df)
-st.divider()  
+st.divider()
 
 
-#Which disease is the most common in the dataset?
+# Which disease is the most common in the dataset?
 
 st.subheader("4. Which disease is the most common in the dataset?")
-most_common_disease =leaf_disease_df[leaf_disease_df['leaf_type'] == 'diseased']['leaf_family'].value_counts().idxmax()
-
+most_common_disease = leaf_disease_df[leaf_disease_df['leaf_type']
+                                      == 'diseased']['leaf_family'].value_counts().idxmax()
 
 
 st.write()
@@ -74,14 +76,17 @@ sns.set(style="whitegrid")
 
 # Create a pie chart using Seaborn
 plt.figure(figsize=(10, 10))
-leaf_family_counts =leaf_disease_df[leaf_disease_df['leaf_type'] == 'diseased']['leaf_family'].value_counts()
+leaf_family_counts = leaf_disease_df[leaf_disease_df['leaf_type']
+                                     == 'diseased']['leaf_family'].value_counts()
 sns.set_palette("pastel")  # Set a pastel color palette
-plt.pie(leaf_family_counts, labels=leaf_family_counts.index, autopct='%1.1f%%', startangle=140)
+plt.pie(leaf_family_counts, labels=leaf_family_counts.index,
+        autopct='%1.1f%%', startangle=140)
 plt.title("Disease Distribution")
 
 # Display the pie chart using Streamlit
 st.pyplot(plt)
 
-st.markdown(f"**{most_common_disease}** is the most common disease in the dataset")
+st.markdown(
+    f"**{most_common_disease}** is the most common disease in the dataset")
 
 st.divider()
